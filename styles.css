@@ -1,0 +1,252 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: url('media/homepage_picture.jpg') no-repeat center center/cover;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #003366;
+    /* Dark blue color */
+    z-index: 1000;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+header .logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centers the nav */
+}
+
+header nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #00aaff;
+}
+
+.contact-button {
+    background-color: #007aff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #005bb5;
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 10px;
+    font-family: 'Dancing Script', cursive;
+    /* Cursive font */
+    font-weight: normal;
+}
+
+.scroll-down {
+    font-size: 2rem;
+    color: #fff;
+    margin-top: 50px;
+    /* Increased margin to move the arrow lower */
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.scroll-down:hover {
+    transform: translateY(5px);
+    /* Slight movement on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 10px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-info {
+    text-align: left;
+    width: 25%;
+    font-size: 0.8rem;
+    margin-left: 20px;
+}
+
+.footer-info p {
+    margin: 1px 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 40%;
+    text-align: center;
+    flex-wrap: nowrap;
+    /* Prevent wrapping of links */
+    margin: 0 auto;
+    /* Center the links */
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    /* Prevent links from breaking into multiple lines */
+}
+
+.footer-links a:hover {
+    color: #00aaff;
+}
+
+.contact-button {
+    background-color: #fff;
+    color: #000;
+    padding: 5px 10px;
+    /* Shorten the button */
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #00aaff;
+    color: #fff;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: flex-end;
+    /* Move Instagram and Contact Us button to the right */
+    width: 20%;
+    margin-right: 20px;
+    margin-top: 20px;
+    gap: 15px;
+    /* Add space between Instagram and Contact Us button */
+    align-items: center;
+}
+
+.instagram-logo {
+    height: 20px;
+    width: 20px;
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    color: #fff;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    /* Ensure copyright text is centered */
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        /* Stack items vertically on smaller screens */
+        align-items: center;
+    }
+
+    .footer-info,
+    .footer-links,
+    .footer-social {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+}
+
+/* Add the second background image to the next section */
+.second-bg-section {
+    background-image: url('media/bgimg2.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* Adjust the height as needed */
+    width: 100%;
+    position: relative;
+}
+
+/* First background image section */
+.first-bg-section {
+    background-image: url('media/homepage_picture.jpg');
+    background-size: cover;
+    /* Ensures the image covers the section */
+    background-position: center;
+    height: 80vh;
+    /* Adjust this value to reduce the height and make the second image visible */
+    width: 100%;
+    position: relative;
+}
