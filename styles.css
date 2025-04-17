@@ -1,4 +1,7 @@
-/* General Reset */
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* Base Reset + Fonts */
 * {
     margin: 0;
     padding: 0;
@@ -6,247 +9,530 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: #fff;
-    background: url('media/homepage_picture.jpg') no-repeat center center/cover;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #111;
+    background-color: #fff;
 }
 
-/* Header Styles */
+/* Header Section */
 header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0.6rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #003366;
-    /* Dark blue color */
-    z-index: 1000;
 }
 
-header .logo {
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+}
+
+/* Left Side (Logo + Nav) */
+.left-header {
     display: flex;
     align-items: center;
+    gap: 2rem;
 }
 
-header .logo img {
+.left-header img {
     height: 40px;
-    margin-right: 10px;
 }
 
-header .logo span {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-header nav {
+/* Navigation Links */
+.nav-links {
     display: flex;
-    gap: 20px;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-links a:hover {
+    color: #003366;
+}
+
+/* Centered Title */
+.site-title {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    /* Centers the nav */
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #001f4d;
+    pointer-events: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
-header nav a {
-    text-decoration: none;
-    color: #fff;
+/* Contact Us Button */
+.contact-btn {
+    background-color: #003366;
+    color: white;
     font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-header nav a:hover {
-    color: #00aaff;
-}
-
-.contact-button {
-    background-color: #007aff;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.contact-button:hover {
-    background-color: #005bb5;
-}
-
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.hero h1 {
-    font-size: 3rem;
-    color: #fff;
-}
-
-.hero .subtitle {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-top: 10px;
-    font-family: 'Dancing Script', cursive;
-    /* Cursive font */
-    font-weight: normal;
-}
-
-.scroll-down {
-    font-size: 2rem;
-    color: #fff;
-    margin-top: 50px;
-    /* Increased margin to move the arrow lower */
     text-decoration: none;
-    transition: transform 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.scroll-down:hover {
-    transform: translateY(5px);
-    /* Slight movement on hover */
+.contact-btn:hover {
+    background-color: #002244;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #000;
-    color: #fff;
-    padding: 15px 10px;
+/* Hero / Background Section */
+.bg-section {
+    background-image: url('media/backgroundimgone.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+}
+
+.bg-text {
+    color: white;
+    z-index: 2;
+    max-width: 50%;
+}
+
+.bg-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bg-text p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Text Section Below Image */
+.text-section {
+    background-color: white;
     text-align: center;
-    font-size: 0.9rem;
+    padding: 2rem 1rem 1rem 1rem;
+    /* Less bottom padding */
+    margin-top: 0;
+    /* No need to pull it up manually */
 }
 
-.footer-content {
+.text-section p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 auto 2rem auto;
+    max-width: 800px;
+}
+
+/* Optional: Larger text on wider screens */
+@media (min-width: 768px) {
+    .text-section p {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+/* About Preview Section */
+.about-preview {
+    background-color: #f7f7f7;
+    /* Light gray background */
+    padding: 3rem 1rem;
+    text-align: left;
+    /* Left align text */
+}
+
+/* Heading for About Preview */
+.about-preview h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    /* Bold for heading */
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    padding-left: 4rem;
+    /* Add space from the left */
+    margin-top: 0;
+    /* Remove top margin to fix alignment */
+}
+
+/* Horizontal line under the heading */
+.horizontal-line {
+    width: calc(100% - 8rem);
+    /* Full width minus left and right padding */
+    height: 1px;
+    margin: 1rem auto;
+    background-color: #ccc;
+    /* Light gray color for the line */
+    border: none;
+}
+
+/* Wrapper for text and image */
+.content-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding: 0 4rem;
+    /* Add padding on the left and right sides */
 }
 
-.footer-info {
+/* Text section (Left side) */
+.text-left {
+    width: 48%;
     text-align: left;
-    width: 25%;
-    font-size: 0.8rem;
-    margin-left: 20px;
+    padding-left: 0;
+    /* Remove excessive padding */
+    margin-left: 0;
+    /* Align with the header */
 }
 
-.footer-info p {
-    margin: 1px 0;
+/* Image section (Right side) */
+.image-right {
+    width: 48%;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.footer-links {
+/* Image size */
+.about-image {
+    height: 2.5in;
+    /* Shrink the image to 2–2.5 inches */
+    object-fit: cover;
+}
+
+/* Description text */
+.about-preview p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    padding-left: 0;
+    /* Align text properly with the heading */
+}
+
+/* Read More button */
+.read-more {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    /* White text */
+    text-decoration: none;
+    padding: 0.7rem 2rem;
+    border: 2px solid #f7f7f7;
+    /* Royal green/Teal color */
+    background-color: #2a7f62;
+    /* Same color background */
+    border-radius: 0px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* Button hover effect */
+.read-more:hover {
+    background-color: rgb(0, 0, 0);
+    color: #2a7f62;
+    /* Text changes to royal green/teal on hover */
+}
+
+/* Services Section */
+.services-preview {
+    background-color: #0a2342;
+    /* Navy Blue */
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.services-preview h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+
+/* Container */
+.services-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    width: 40%;
-    text-align: center;
-    flex-wrap: nowrap;
-    /* Prevent wrapping of links */
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
-    /* Center the links */
 }
 
-.footer-links a {
+/* Service Card */
+/* Service Card with Transparency */
+.service-card {
+    background: rgba(255, 255, 255, 0.85);
+    /* 85% opacity (adjust as needed) */
+    color: #0a2342;
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect with Transparency */
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.95);
+    /* A little less transparent on hover */
+}
+
+
+/* Card Title */
+.service-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Card Text */
+.service-card p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Button for "See All Services" */
+.services-button {
+    text-align: center;
+    margin-top: 2rem;
+    /* Space from the cards */
+}
+
+.services-button .btn-services {
+    display: inline-block;
+    background-color: #0a2342;
+    /* Navy blue, same as header button */
+    color: white;
+    padding: 1rem 2rem;
     text-decoration: none;
-    color: #fff;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-    white-space: nowrap;
-    /* Prevent links from breaking into multiple lines */
-}
-
-.footer-links a:hover {
-    color: #00aaff;
-}
-
-.contact-button {
-    background-color: #fff;
-    color: #000;
-    padding: 5px 10px;
-    /* Shorten the button */
-    border-radius: 5px;
-    font-size: 0.9rem;
-    text-decoration: none;
+    border-radius: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
-.contact-button:hover {
-    background-color: #00aaff;
-    color: #fff;
+.services-button .btn-services:hover {
+    background-color: #1e4f74;
+    /* Slightly lighter navy blue on hover */
 }
 
-.footer-social {
+/* Contact Us Section */
+.contact-us-section {
+    background-image: url('media/telephone.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 3in;
+    /* Setting height to 3 inches */
     display: flex;
-    justify-content: flex-end;
-    /* Move Instagram and Contact Us button to the right */
-    width: 20%;
-    margin-right: 20px;
-    margin-top: 20px;
-    gap: 15px;
-    /* Add space between Instagram and Contact Us button */
+    justify-content: center;
+    /* Center the content horizontally */
     align-items: center;
+    /* Center the content vertically */
+    position: relative;
 }
 
-.instagram-logo {
-    height: 20px;
-    width: 20px;
+.contact-content {
+    display: flex;
+    justify-content: center;
+    /* Center the text and button together */
+    align-items: center;
+    /* Vertically align both text and button */
+    width: 80%;
+    /* Limit the width so they don’t stretch too far */
+    max-width: 1000px;
+    /* Optional: Set a max width for large screens */
+    position: relative;
+    /* Allow z-index stacking */
 }
 
-.footer-copyright {
-    font-size: 0.8rem;
-    color: #fff;
-    width: 100%;
-    margin-top: 10px;
+.contact-text {
+    color: white;
+    margin-right: 1rem;
+    /* Add some space between text and button */
+    z-index: 1;
+    /* Ensure text is above the background overlay */
+}
+
+.contact-text h2 {
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin: 0.2rem 0;
+}
+
+.contact-text p {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0.2rem 0;
+}
+
+/* Contact Us Button in the Contact Us Section */
+.contact-btn {
+    display: inline-block;
+    background-color: #2a7f62;
+    /* Set the new color here for contact button */
+    color: white;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 0px;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+    /* Ensure button is above the background overlay */
+}
+
+.contact-btn:hover {
+    background-color: rgb(0, 0, 0);
+    color: #2a7f62;
+    /* Text changes to royal green/teal on hover */
+}
+
+/* Other buttons (like in header) remain unaffected by this change */
+header .contact-btn {
+    background-color: #0a2342;
+    /* Keep the original color for header button */
+}
+
+header .contact-btn:hover {
+    background-color: #0a2342;
+    /* Slightly lighter on hover */
+}
+
+/* Darker overlay to improve text contrast */
+.contact-us-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Slight dark overlay */
+    z-index: 0;
+    /* Keeps the overlay behind the text and button */
+}
+
+/* Footer Styling */
+.main-footer {
+    background-color: #000000;
+    color: white;
+    padding: 3rem 2rem 1rem 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-left p,
+.footer-center ul li,
+.footer-bottom p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.footer-center h4,
+.footer-right h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-center ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-center ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-center ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-center ul li a:hover {
+    color: #2a7f62;
+}
+
+.footer-logo {
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    opacity: 0.8;
+}
+
+.footer-bottom {
     text-align: center;
-    /* Ensure copyright text is centered */
-}
-
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        /* Stack items vertically on smaller screens */
-        align-items: center;
-    }
-
-    .footer-info,
-    .footer-links,
-    .footer-social {
-        width: 100%;
-        text-align: center;
-        margin: 5px 0;
-    }
-
-    .footer-links {
-        flex-direction: column;
-    }
-}
-
-/* Add the second background image to the next section */
-.second-bg-section {
-    background-image: url('media/bgimg2.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    /* Adjust the height as needed */
-    width: 100%;
-    position: relative;
-}
-
-/* First background image section */
-.first-bg-section {
-    background-image: url('media/homepage_picture.jpg');
-    background-size: cover;
-    /* Ensures the image covers the section */
-    background-position: center;
-    height: 80vh;
-    /* Adjust this value to reduce the height and make the second image visible */
-    width: 100%;
-    position: relative;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1rem;
+    font-size: 0.85rem;
 }
