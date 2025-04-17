@@ -536,3 +536,59 @@ header .contact-btn:hover {
     padding-top: 1rem;
     font-size: 0.85rem;
 }
+
+/* Mobile first adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-left,
+    .nav-right {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .bg-image-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .about-preview {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-preview img {
+        width: 90%;
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .services-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%;
+    }
+
+    .contact-section-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
